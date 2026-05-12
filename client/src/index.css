@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --ink: #0b1220;
+    --paper: #f6f1e8;
+    --accent: #ff5c2a;
+    --accent-dark: #e74a1f;
+    --muted: #6f685d;
+    --line: #d7cec0;
+    --surface: #ffffff;
+    --surface-2: #f2eadf;
+    --glow: #fff1e8;
+}
+
+* {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background: radial-gradient(1200px circle at 15% -10%, #ffe4d6 0, transparent 45%),
+            radial-gradient(900px circle at 90% 10%, #d6e4ff 0, transparent 40%),
+            #f6f1e8;
+        color: #0b1220;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: "Fraunces", serif;
+    }
+
+    ::selection {
+        background: #ff5c2a;
+        color: #0b1220;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.rich-text {
+    font-size: 15px;
+    color: #5f5a52;
+}
+
+.rich-text p {
+    margin-bottom: 16px;
+}
+
+.rich-text h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0b1220;
+    margin: 12px;
+}
+
+.rich-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0b1220;
+    margin: 12px;
+}
+
+.rich-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2430;
+    margin: 16px;
+}
+
+.rich-text h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3342;
+    margin: 12px;
+}
+
+.rich-text h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b4f57;
+    margin: 12px;
+}
+
+.rich-text h6 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #5c6068;
+    margin: 12px;
+}
+
+.rich-text strong {
+    font-weight: 700;
+}
+
+.rich-text ul {
+    margin-left: 30px;
+    list-style-type: disc;
+}
+
+.rich-text li {
+    margin-left: 8px;
+}
+
+.rich-text ol {
+    margin-left: 30px;
+    list-style-type: decimal;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-gradient {
+    animation: gradient 4s ease infinite;
+}
+
+.animate-slideDown {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+.editorial-grid {
+    background-image: linear-gradient(to right, rgba(11, 18, 32, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(11, 18, 32, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+}
+
+.section-sheen {
+    background: radial-gradient(circle at top, rgba(255, 92, 42, 0.18), transparent 45%);
+}
+
+.btn-primary {
+    background: linear-gradient(120deg, #0b1220, #1f2937);
+    color: #f6f1e8;
+    border: 1px solid #0b1220;
+    box-shadow: 0 12px 28px rgba(11, 18, 32, 0.22);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(120deg, #0b1220, #2b1f1a);
+}
+
+.btn-accent {
+    background: linear-gradient(120deg, #ff5c2a, #ffb39b);
+    color: #0b1220;
+    border: 1px solid #ff5c2a;
+    box-shadow: 0 12px 24px rgba(255, 92, 42, 0.25);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #0b1220;
+    border: 1px solid #d7cec0;
+}
+
+.surface-panel {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #e7ddcf;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 18px 40px rgba(11, 18, 32, 0.12);
+}
+
+.ink-shadow {
+    box-shadow: 0 20px 50px rgba(11, 18, 32, 0.25);
+}
