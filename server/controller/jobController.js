@@ -8,6 +8,8 @@ export const getJobs = async (req, res) => {
         
         const jobs = await Job.find({ visible: true})
         .populate({path: "companyId", select: "-password"})
+        .sort({ date: -1 })
+        .lean()
 
         res.json({success: true, jobs})
 

@@ -59,7 +59,6 @@ const JobListing = () => {
 
       const newFilteredJobs = jobs
         .slice()
-        .reverse()
         .filter(
           (job) =>
             matchesCategory(job) &&

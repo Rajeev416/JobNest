@@ -22,7 +22,7 @@ const ManageJobs = () => {
       });
 
       if (data.success) {
-        setJobs(data.jobsData.reverse());
+        setJobs(data.jobsData);
       } else {
         toast.error(data.message);
       }

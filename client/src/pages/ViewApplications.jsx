@@ -24,7 +24,7 @@ const ViewApplications = () => {
       });
 
       if (data.success) {
-        setApplicants(data.applications.reverse());
+        setApplicants(data.applications);
       } else if (showLoading) {
         toast.error(data.message);
       }

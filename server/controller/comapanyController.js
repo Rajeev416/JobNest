@@ -129,6 +129,7 @@ export const getCompanyJobApplicants = async (req, res) => {
     const applications = await JobApplication.find({ companyId })
       .populate("userId", "name image email resume")
       .populate("jobId", "title  location category level salary")
+      .sort({ date: -1 })
       .exec();
 
     return res.json({ success: true, applications });
@@ -141,7 +142,7 @@ export const getCompanyJobApplicants = async (req, res) => {
 export const getCompanyPostedJobs = async (req, res) => {
   try {
     const companyId = req.company._id;
-    const jobs = await Job.find({ companyId });
+    const jobs = await Job.find({ companyId }).sort({ date: -1 });
     // adding No. of applicants
     const jobsData = await Promise.all(
       jobs.map(async (job) => {
